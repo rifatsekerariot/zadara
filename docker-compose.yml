@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  api:
+    build: ./backend
+    container_name: vmware-middleware
+    expose:
+      - "3001"
+    environment:
+      - PORT=3001
+    networks:
+      - vmware-net
+    restart: always
+
+  web:
+    build: ./frontend
+    container_name: vmware-frontend
+    ports:
+      - "443:443"
+      - "80:80"
+    volumes:
+      - ./certs:/etc/nginx/certs:ro
+    depends_on:
+      - api
+    networks:
+      - vmware-net
+    restart: always
+
+networks:
+  vmware-net:
+    driver: bridge
