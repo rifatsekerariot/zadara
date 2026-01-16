@@ -8,7 +8,7 @@ export default defineConfig({
     port: 3000,
     proxy: {
       '/api': {
-        target: 'http://localhost:3001', // Proxy to our Node.js Middleware
+        target: 'http://localhost:3009', // Proxy to our Node.js Middleware
         changeOrigin: true,
         secure: false,
       },

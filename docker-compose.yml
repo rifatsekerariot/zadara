@@ -5,9 +5,9 @@ services:
     build: ./backend
     container_name: vmware-middleware
     ports:
-      - "3001:3001"
+      - "3009:3009"
     environment:
-      - PORT=3001
+      - PORT=3009
     networks:
       - vmware-net
     restart: always
@@ -16,7 +16,7 @@ services:
     build: ./frontend
     container_name: vmware-frontend
     ports:
-      - "3002:3000"
+      - "3008:3008"
     depends_on:
       - api
     networks:
