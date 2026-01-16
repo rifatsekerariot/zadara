@@ -44,7 +44,7 @@ const treeData: DataNode[] = [
 const MainLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     const [collapsed, setCollapsed] = useState(false);
     const {
-        token: { colorBgContainer, borderRadiusLG },
+        token: { borderRadiusLG },
     } = theme.useToken();
 
     return (
