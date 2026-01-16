@@ -4,8 +4,8 @@ services:
   api:
     build: ./backend
     container_name: vmware-middleware
-    expose:
-      - "3001"
+    ports:
+      - "3001:3001"
     environment:
       - PORT=3001
     networks:
@@ -16,10 +16,7 @@ services:
     build: ./frontend
     container_name: vmware-frontend
     ports:
-      - "8443:443"
-      - "8080:80"
-    volumes:
-      - ./certs:/etc/nginx/certs:ro
+      - "3000:3000"
     depends_on:
       - api
     networks:
