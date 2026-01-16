@@ -1,4 +1,4 @@
-import { ThemeConfig } from 'antd';
+import type { ThemeConfig } from 'antd';
 
 export const darkTheme: ThemeConfig = {
     algorithm: [], // We will use Dark Algorithm in App.tsx not here, or define tokens explicitly
